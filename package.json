@@ -1,0 +1,20 @@
+{
+  "name": "lombokts",
+  "description": "Lombok for TypeScript",
+  "version": "1.0.0",
+  "author": "Krid Heprakhone <me@riflowth.com>",
+  "main": "dist/LombokTS.js",
+  "types": "index.d.ts",
+  "bin": {
+    "lombokts": "dist/cli/Bin.js"
+  },
+  "scripts": {
+    "dev": "tsc -w"
+  },
+  "devDependencies": {
+    "@types/node": "^20.2.3",
+    "chokidar": "^3.5.3",
+    "kleur": "^4.1.5",
+    "typescript": "^5.0.4"
+  }
+}
