@@ -6,7 +6,7 @@ A decorator-based module that allows developer to reduce boilerplate code, make 
 Special thanks to **[Lombok](https://github.com/projectlombok/lombok)**. This project (TSLombok) is strongly inspired from their.
 
 ## Preview
-<img src="https://github.com/vectier/TSLombok/assets/17198802/ff03782d-1dcc-4adc-a39f-8af0447c5fdd" width="500" /><br/>
+<img src="https://github.com/vectier/tslombok/assets/17198802/fba73222-57c3-4dce-961c-4de9ba95af52" width="500" /><br/>
 Without any IDE extension installation, only TSLombok is installed.
 
 ## Getting started
