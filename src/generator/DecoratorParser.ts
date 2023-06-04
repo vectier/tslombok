@@ -7,10 +7,10 @@ export class DecoratorParser {
   private readonly decoratorRegistry: DecoratorRegistry;
   private readonly sourceFile: SourceFile;
 
-  // All possible results to generate DTS
+  // All posible method signatures from method generator decorators
   private readonly methodSignaturesByClassName: Map<string, MethodSignature[]> = new Map();
 
-  public constructor(decoratorRegistry: DecoratorRegistry, sourceCode: string) {
+  public constructor(sourceCode: string, decoratorRegistry: DecoratorRegistry) {
     this.decoratorRegistry = decoratorRegistry;
     this.sourceFile = ts.createSourceFile('code.ts', sourceCode, ScriptTarget.Latest);
     this.parse();

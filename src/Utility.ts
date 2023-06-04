@@ -1,4 +1,4 @@
-import fs from 'fs';
+import { bold, green } from 'kleur';
 import path from 'path';
 
 // Capitalize a first letter of given name
@@ -10,16 +10,16 @@ export const pathToPosix = (pathString: string) => {
   return pathString.split(path.sep).join(path.posix.sep)
 };
 
-// Get all files from specific directory recursivly
-export const getAllFilePaths = (directoryPath: string, files: string[] = []) => {
-  const contents = fs.readdirSync(directoryPath);
-  for (const content of contents) {
-    const name = `${directoryPath}/${content}`;
-    if (fs.statSync(name).isDirectory()) {
-      getAllFilePaths(name, files);
-    } else {
-      files.push(name);
-    }
+export const logSuccess = (sourceCodePaths: string[], durationInMs: number) => {
+  if (sourceCodePaths.length === 1) {
+    console.log(
+      green(`Process LombokTS decorators on ${bold(path.parse(sourceCodePaths[0]).base)} ` +
+      `successfully in ${bold(durationInMs)} ms`),
+    );
+  } else {
+    console.log(
+      green(`Process LombokTS decorators on ${bold(sourceCodePaths.length)} files ` +
+      `successfully in ${bold(durationInMs)} ms`),
+    );
   }
-  return files;
-}
+};
