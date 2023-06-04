@@ -31,10 +31,9 @@ export class DecoratorParser {
       if (!ts.isClassDeclaration(node)) return;
 
       // TODO: support `export default class {}`
+      // Don't traverse to non-module file (without named export)
       if (!node.name) return;
       const className = node.name.getText(this.sourceFile);
-
-      this.methodSignaturesByClassName.set(className, []);
 
       // Traverse to the class member
       node.forEachChild((classMemberNode) => {
@@ -61,6 +60,9 @@ export class DecoratorParser {
             if (!expectedDecorator) continue;
 
             if (isMethodGeneratorDecorator(expectedDecorator)) {
+              if (!this.methodSignaturesByClassName.get(className)) {
+                this.methodSignaturesByClassName.set(className, []);
+              }
               const methodSignature = expectedDecorator.createMethodSignature(propertyName, returnType);
               this.methodSignaturesByClassName.get(className)!.push(methodSignature);
             }

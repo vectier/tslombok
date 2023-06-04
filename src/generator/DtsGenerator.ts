@@ -41,8 +41,10 @@ export class DtsGenerator {
     const interfaceDeclarations: DeclarationStatement[] = [];
     const namespaceDeclarations: DeclarationStatement[] = [];
 
-    // Declare interface for non-static accessor
     const methodSignatureByClassName = decoratorParser.getMethodSignatures();
+    if (methodSignatureByClassName.size === 0) return;
+
+    // Declare interface for non-static accessor
     for (const [className, methodSignatures] of methodSignatureByClassName) {
       const interfaceDeclaration = ts.factory.createInterfaceDeclaration(
         [ts.factory.createToken(SyntaxKind.ExportKeyword)],
