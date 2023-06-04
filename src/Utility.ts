@@ -13,12 +13,12 @@ export const pathToPosix = (pathString: string) => {
 export const logSuccess = (sourceCodePaths: string[], durationInMs: number) => {
   if (sourceCodePaths.length === 1) {
     console.log(
-      green(`Process LombokTS decorators on ${bold(path.parse(sourceCodePaths[0]).base)} ` +
+      green(`Process TSLombok decorators on ${bold(path.parse(sourceCodePaths[0]).base)} ` +
       `successfully in ${bold(durationInMs)} ms`),
     );
   } else {
     console.log(
-      green(`Process LombokTS decorators on ${bold(sourceCodePaths.length)} files ` +
+      green(`Process TSLombok decorators on ${bold(sourceCodePaths.length)} files ` +
       `successfully in ${bold(durationInMs)} ms`),
     );
   }

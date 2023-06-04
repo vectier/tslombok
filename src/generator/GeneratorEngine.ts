@@ -27,7 +27,7 @@ export class GeneratorEngine {
     // TODO: add root path configuration
     const rootPath = process.cwd();
     this.watchPath = path.join(rootPath, '**/*.ts');
-    this.outputBasePath = path.join(rootPath, '/node_modules/lombokts');
+    this.outputBasePath = path.join(rootPath, '/node_modules/tslombok');
 
     this.decoratorRegistry = new DecoratorRegistry();
     this.registerDecorators();

@@ -88,7 +88,7 @@ export class DecoratorParser {
           }
 
           for (const decorator of decorators) {
-            // Gets only LombokTS decorators
+            // Gets only TSLombok decorators
             const decoratorName = decorator.getText(this.sourceFile).slice(1);
             if (!expectedDecoratorNames.includes(decoratorName)) continue;
 

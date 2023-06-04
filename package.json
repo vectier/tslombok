@@ -1,21 +1,22 @@
 {
-  "name": "lombokts",
+  "name": "tslombok",
   "description": "Lombok for TypeScript",
   "version": "1.0.0",
   "author": "Krid Heprakhone <me@riflowth.com>",
-  "homepage": "https://github.com/vectier/lombokts",
-  "bugs": "https://github.com/vectier/lombokts/issues",
+  "homepage": "https://github.com/vectier/tslombok",
+  "bugs": "https://github.com/vectier/tslombok/issues",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vectier/lombokts.git"
+    "url": "https://github.com/vectier/tslombok.git"
   },
-  "main": "dist/LombokTS.js",
+  "main": "dist/TSLombok.js",
   "types": "index.d.ts",
   "bin": {
-    "lombokts": "dist/cli/Bin.js"
+    "tslombok": "dist/cli/Bin.js"
   },
   "scripts": {
+    "build": "tsc",
     "dev": "tsc -w",
     "prepublish": "tsc"
   },

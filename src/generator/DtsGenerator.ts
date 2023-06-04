@@ -29,14 +29,14 @@ export class DtsGenerator {
       false,
       ts.factory.createNamedExports([]),
     );
-    // Create module declarations for all files that include LombokTS decorators
+    // Create module declarations for all files that include TSLombok decorators
     const moduleDeclarations = Array.from(this.moduleByPath.values());
     return ts.factory.createNodeArray([emptyNamedExport, ...moduleDeclarations]);
   }
 
   // We use the declaration merging technique to add method signatures to existing class.
   // So we need to generate interfaces and namespace with the same as class name,
-  // then export them with the same module path for adding LombokTS methods.
+  // then export them with the same module path for adding TSLombok methods.
   public addModule(modulePath: string, decoratorParser: DecoratorParser): void {
     const interfaceDeclarations: DeclarationStatement[] = [];
     const namespaceDeclarations: DeclarationStatement[] = [];
@@ -59,7 +59,7 @@ export class DtsGenerator {
     // Declare namespace for static accessor
     // TODO: namespace for static
 
-    // Declare module to map with sourcecode path to extends LombokTS methods
+    // Declare module to map with sourcecode path to extends TSLombok methods
     const moduleDeclaration = ts.factory.createModuleDeclaration(
       [ts.factory.createToken(SyntaxKind.DeclareKeyword)],
       ts.factory.createStringLiteral(modulePath),

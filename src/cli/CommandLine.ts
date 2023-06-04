@@ -13,9 +13,9 @@ export class CommandLine{
 
   private init(): void {
     console.log(
-      `\n${bold().blue('LombokTS')} ${cyan('v' + packageJson.version)} ` +
+      `\n${bold().blue('TSLombok')} ${cyan('v' + packageJson.version)} ` +
       gray('generator engine is watching your sourcecode...') + '\n' +
-      `${bold('(!)')} Always save your sourcecode after emit a LombokTS decorator\n`,
+      `${bold('(!)')} Always save your sourcecode after emit a TSLombok decorator\n`,
     );
 
     const generatorEngine = new GeneratorEngine();

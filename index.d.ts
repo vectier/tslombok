@@ -12,7 +12,7 @@ export function Getter(...params: Parameters<PropertyDecorator>): void;
 export function Setter(...params: Parameters<PropertyDecorator>): void;
 
 /**
- * For LombokTS generated output
+ * For TSLombok generated output
  */
 import './generated';
 

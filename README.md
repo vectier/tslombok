@@ -1,28 +1,28 @@
-# LombokTS
+# TSLombok
 A decorator-based module that allows developer to reduce boilerplate code, make your code more fatty-free.
 
-**LombokTS** use [TypeScript Compiler API](https://github.com/microsoft/TypeScript/wiki/Using-the-Compiler-API) behind the scene to read the Abstract Syntax Tree (AST) of your TypeScript source code and then determine what should declaration to generate into .d.ts ([declaration file](https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html)) for using [declaration merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html) technique. This technique allows LombokTS to merge a magic method from LombokTS into the existing decorated class.
+**TSLombok** use [TypeScript Compiler API](https://github.com/microsoft/TypeScript/wiki/Using-the-Compiler-API) behind the scene to read the Abstract Syntax Tree (AST) of your TypeScript source code and then determine what should declaration to generate into .d.ts ([declaration file](https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html)) for using [declaration merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html) technique. This technique allows TSLombok to merge a magic method from TSLombok into the existing decorated class.
 
-Special thanks to **[Lombok](https://github.com/projectlombok/lombok)**. This project (LombokTS) is strongly inspired from their.
+Special thanks to **[Lombok](https://github.com/projectlombok/lombok)**. This project (TSLombok) is strongly inspired from their.
 
 ## Preview
-<img src="https://github.com/vectier/lombokts/assets/17198802/ff03782d-1dcc-4adc-a39f-8af0447c5fdd" width="500" /><br/>
-Without any IDE extension installation, only LombokTS is installed.
+<img src="https://github.com/vectier/TSLombok/assets/17198802/ff03782d-1dcc-4adc-a39f-8af0447c5fdd" width="500" /><br/>
+Without any IDE extension installation, only TSLombok is installed.
 
 ## Getting started
-Install LombokTS module
+Install TSLombok module
 
 ```bash
 # For NPM user
-npm install lombokts
+npm install tslombok
 # For Yarn user
-yarn install lombokts
+yarn install tslombok
 # For PNPM user
-pnpm install lombokts
+pnpm install tslombok
 ```
 
-Then run LombokTS generator engine with `npx lombokts` and ready to go!  
-*(We plan to remove this step and make LombokTS a TSC plugin for automatically starting up)*
+Then run TSLombok generator engine with `npx tslombok` and ready to go!  
+*(We plan to remove this step and make TSLombok a TSC plugin for automatically starting up)*
 
 ## Features
 
@@ -49,12 +49,12 @@ people.getName(); // 'Jane Doe'
 ```
 
 #### Limitation
-- LombokTS generator engine reads your source code and determines what parameter type or return type should be by reading `TypeReference` of `PropertyDeclaration` on AST, so you must explicitly define the type.
+- TSLombok generator engine reads your source code and determines what parameter type or return type should be by reading `TypeReference` of `PropertyDeclaration` on AST, so you must explicitly define the type.
 - We recommend you to use [this TypeScript ESLint rule](https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/typedef.md#membervariabledeclaration) to enforce type annotations on member variables of classes.
 
 ## Contribution
 There are many ways in which you can participate in this project, for example:
 
-- [Submit bugs and feature requests](https://github.com/vectier/lombokts/issues).
-- Review [source code changes](https://github.com/vectier/lombokts/pulls).
-- Fixing issues and contributing directly to the code base by [submitting pull requests](https://github.com/vectier/lombokts/pulls).
+- [Submit bugs and feature requests](https://github.com/vectier/tslombok/issues).
+- Review [source code changes](https://github.com/vectier/tslombok/pulls).
+- Fixing issues and contributing directly to the code base by [submitting pull requests](https://github.com/vectier/tslombok/pulls).
