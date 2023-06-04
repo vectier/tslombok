@@ -1,0 +1,8 @@
+.git/
+.idea/
+.editorconfig
+
+src/**/*.ts
+!**/*.d.ts
+
+generated.d.ts

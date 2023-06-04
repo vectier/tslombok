@@ -3,13 +3,21 @@
   "description": "Lombok for TypeScript",
   "version": "1.0.0",
   "author": "Krid Heprakhone <me@riflowth.com>",
+  "homepage": "https://github.com/vectier/lombokts",
+  "bugs": "https://github.com/vectier/lombokts/issues",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vectier/lombokts.git"
+  },
   "main": "dist/LombokTS.js",
   "types": "index.d.ts",
   "bin": {
     "lombokts": "dist/cli/Bin.js"
   },
   "scripts": {
-    "dev": "tsc -w"
+    "dev": "tsc -w",
+    "prepublish": "tsc"
   },
   "devDependencies": {
     "@types/node": "^20.2.3",
