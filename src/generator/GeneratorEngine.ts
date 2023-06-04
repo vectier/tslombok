@@ -45,7 +45,7 @@ export class GeneratorEngine {
 
     sourceCodePaths.forEach((sourceCodePath) => {
       const sourceCode = fs.readFileSync(sourceCodePath).toString();
-      const parser = new DecoratorParser(sourceCode, this.decoratorRegistry);
+      const parser = new DecoratorParser(sourceCode, sourceCodePath, this.decoratorRegistry);
       this.dtsGenerator.addModule(sourceCodePath, parser);
     });
     this.dtsGenerator.generate();
