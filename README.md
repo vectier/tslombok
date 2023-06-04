@@ -1,4 +1,8 @@
 # TSLombok
+<a href="https://github.com/vectier/tslombok/blob/main/LICENSE"><img src="https://img.shields.io/github/license/vectier/tslombok?style=flat-square" /></a>
+<a href="https://www.npmjs.com/package/tslombok"><img src="https://img.shields.io/npm/v/tslombok?style=flat-square" /></a>
+<a href="https://github.com/vectier/tslombok/pulls"><img src="https://img.shields.io/badge/PRs-welcome-yellow?style=flat-square" /></a>
+
 A decorator-based module that allows developer to reduce boilerplate code, make your code more fatty-free.
 
 **TSLombok** use [TypeScript Compiler API](https://github.com/microsoft/TypeScript/wiki/Using-the-Compiler-API) behind the scene to read the Abstract Syntax Tree (AST) of your TypeScript source code and then determine what should declaration to generate into .d.ts ([declaration file](https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html)) for using [declaration merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html) technique. This technique allows TSLombok to merge a magic method from TSLombok into the existing decorated class.
@@ -58,3 +62,7 @@ There are many ways in which you can participate in this project, for example:
 - [Submit bugs and feature requests](https://github.com/vectier/tslombok/issues).
 - Review [source code changes](https://github.com/vectier/tslombok/pulls).
 - Fixing issues and contributing directly to the code base by [submitting pull requests](https://github.com/vectier/tslombok/pulls).
+
+## License
+Copyright (c) Vectier. All rights reserved.  
+Licensed under the [MIT](https://github.com/vectier/tslombok/blob/main/LICENSE) license.
