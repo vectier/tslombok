@@ -5,6 +5,10 @@ A decorator-based module that allows developer to reduce boilerplate code, make 
 
 Special thanks to **[Lombok](https://github.com/projectlombok/lombok)**. This project (LombokTS) is strongly inspired from their.
 
+## Preview
+<img src="https://github.com/vectier/lombokts/assets/17198802/ff03782d-1dcc-4adc-a39f-8af0447c5fdd" width="500" /><br/>
+Without any IDE extension installation, only LombokTS is installed.
+
 ## Getting started
 Install LombokTS module
 
