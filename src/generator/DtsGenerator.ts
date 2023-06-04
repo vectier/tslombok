@@ -42,7 +42,10 @@ export class DtsGenerator {
     const namespaceDeclarations: DeclarationStatement[] = [];
 
     const methodSignatureByClassName = decoratorParser.getMethodSignatures();
-    if (methodSignatureByClassName.size === 0) return;
+    if (methodSignatureByClassName.size === 0) {
+      this.moduleByPath.delete(modulePath);
+      return;
+    }
 
     // Declare interface for non-static accessor
     for (const [className, methodSignatures] of methodSignatureByClassName) {
