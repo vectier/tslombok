@@ -74,7 +74,6 @@ export class GeneratorEngine {
   public init(): void {
     const targetFiles = globSync('**/*.ts', {
       ignore: ['node_modules/**'],
-      posix: true,
       absolute: true,
     });
     this.generate(targetFiles);
