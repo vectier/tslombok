@@ -1,4 +1,4 @@
-import { bold, green } from 'kleur';
+import { bold, green, red } from 'kleur';
 import path from 'path';
 
 // Capitalize a first letter of given name
@@ -22,4 +22,8 @@ export const logSuccess = (sourceCodePaths: string[], durationInMs: number) => {
       `successfully in ${bold(durationInMs)} ms`),
     );
   }
+};
+
+export const logTsConfigNotFound = () => {
+  console.error(red('Cannot find tsconfig.json'));
 };

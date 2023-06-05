@@ -1,5 +1,4 @@
-import path from 'path';
-import ts, { MethodSignature, ScriptTarget, SourceFile, StringLiteral } from 'typescript';
+import ts, { CompilerOptions, MethodSignature, ScriptTarget, SourceFile } from 'typescript';
 import { isMethodGeneratorDecorator } from '../decorators/MethodGeneratorDecorator';
 import { DecoratorRegistry } from './DecoratorRegistry';
 
@@ -8,14 +7,21 @@ export class DecoratorParser {
   private readonly decoratorRegistry: DecoratorRegistry;
   private readonly sourceFile: SourceFile;
   private readonly sourceCodePath: string;
+  private readonly tsconfig: CompilerOptions;
 
   // All posible method signatures from method generator decorators
   private readonly methodSignaturesByClassName: Map<string, MethodSignature[]> = new Map();
 
-  public constructor(sourceCode: string, sourceCodePath: string, decoratorRegistry: DecoratorRegistry) {
+  public constructor(
+    sourceCode: string,
+    sourceCodePath: string,
+    tsconfig: CompilerOptions,
+    decoratorRegistry: DecoratorRegistry,
+  ) {
     this.decoratorRegistry = decoratorRegistry;
     this.sourceFile = ts.createSourceFile('code.ts', sourceCode, ScriptTarget.Latest);
     this.sourceCodePath = sourceCodePath;
+    this.tsconfig = tsconfig;
     this.parse();
   }
 
@@ -39,13 +45,19 @@ export class DecoratorParser {
         if (ts.isNamespaceImport(node.importClause.namedBindings)) return;
 
         // Only `import { foo } from './bar.ts'` is acceptable
-        
-        const importPath = node.moduleSpecifier.getText(this.sourceFile).slice(1, -1);
-        const resolvedImportPath = path.join(this.sourceCodePath, '..', importPath);
-
         const namedImports = node.importClause.namedBindings;
         namedImports.elements.forEach((element) => {
-          // TODO: correct path
+          // Try to resolve module absolute path 
+          const moduleName = node.moduleSpecifier.getText(this.sourceFile).slice(1, -1);
+          const resolvedImport = ts.resolveModuleName(
+            moduleName,
+            this.sourceCodePath,
+            this.tsconfig,
+            ts.sys,
+          );
+          if (!resolvedImport.resolvedModule) return;
+          
+          const resolvedImportPath = resolvedImport.resolvedModule.resolvedFileName;
           pathByImportName.set(element.name.getText(this.sourceFile), resolvedImportPath);
         });
       }
