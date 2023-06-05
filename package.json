@@ -17,14 +17,18 @@
   },
   "scripts": {
     "build": "tsc",
+    "clean": "rimraf ./dist",
     "dev": "tsc -w",
-    "prepublish": "tsc"
+    "prepublish": "pnpm clean && tsc"
+  },
+  "dependencies": {
+    "chokidar": "^3.5.3",
+    "glob": "^10.2.6",
+    "kleur": "^4.1.5"
   },
   "devDependencies": {
     "@types/node": "^20.2.3",
-    "chokidar": "^3.5.3",
-    "glob": "^10.2.6",
-    "kleur": "^4.1.5",
+    "rimraf": "^5.0.1",
     "typescript": "^5.0.4"
   }
 }
