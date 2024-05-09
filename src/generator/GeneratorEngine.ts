@@ -75,7 +75,7 @@ export class GeneratorEngine {
     const targetFiles = globSync('**/*.ts', {
       ignore: ['node_modules/**'],
       absolute: true,
-    });
+    }).map(pathToPosix);
     this.generate(targetFiles);
   }
 
