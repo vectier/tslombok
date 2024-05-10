@@ -1,5 +1,5 @@
 import ts, { CompilerOptions, MethodSignature, ScriptTarget, SourceFile } from 'typescript';
-import { isMethodGeneratorDecorator } from '../decorators/MethodGeneratorDecorator';
+import { isMethodGeneratorDecorator } from './decorators/MethodGeneratorDecorator';
 import { DecoratorRegistry } from './DecoratorRegistry';
 
 export class DecoratorParser {
@@ -56,7 +56,7 @@ export class DecoratorParser {
             ts.sys,
           );
           if (!resolvedImport.resolvedModule) return;
-          
+
           const resolvedImportPath = resolvedImport.resolvedModule.resolvedFileName;
           pathByImportName.set(element.name.getText(this.sourceFile), resolvedImportPath);
         });

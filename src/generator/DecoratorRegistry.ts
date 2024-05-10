@@ -1,7 +1,7 @@
-import { Decorator } from '../decorators/Decorator';
+import { Decorator } from './decorators/Decorator';
 
 export class DecoratorRegistry {
-  
+
   private readonly decorators: Map<string, Decorator>;
 
   public constructor() {
