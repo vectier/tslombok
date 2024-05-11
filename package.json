@@ -1,7 +1,7 @@
 {
   "name": "tslombok",
   "description": "Lombok for TypeScript",
-  "version": "1.2.0",
+  "version": "1.2.6",
   "author": "Krid Heprakhone <me@riflowth.com>",
   "homepage": "https://github.com/vectier/tslombok",
   "bugs": "https://github.com/vectier/tslombok/issues",

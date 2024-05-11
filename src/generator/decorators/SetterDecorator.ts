@@ -10,7 +10,7 @@ export class SetterDecorator implements MethodGeneratorDecorator {
   public createMethodSignature(propertyName: string, returnType: TypeNode): MethodSignature {
     return factory.createMethodSignature(
       undefined,  // No need to have a modifer for interface in declaration merging
-      `get${capitalize(propertyName)}`,
+      `set${capitalize(propertyName)}`,
       undefined,
       undefined,
       [factory.createParameterDeclaration(

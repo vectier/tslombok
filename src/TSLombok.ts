@@ -18,18 +18,16 @@ export const Getter = (target: Object, propertyKey: string | Symbol): void => {
   });
 };
 
-export const Setter = (...params: unknown[]): PropertyDecorator => {
-  return (target: Object, propertyKey: string | Symbol): void => {
-    if (typeof propertyKey === 'symbol') propertyKey.toString();
-    const propertyName = propertyKey as string;
-    const methodName = `set${capitalize(propertyName)}`;
+export const Setter = (target: Object, propertyKey: string | Symbol): void => {
+  if (typeof propertyKey === 'symbol') propertyKey.toString();
+  const propertyName = propertyKey as string;
+  const methodName = `set${capitalize(propertyName)}`;
 
-    // Define setter method to the target class prototype,
-    // that set a given value to their own property instance
-    Object.defineProperty(target, methodName, {
-      value: function (value: unknown) {
-        this[propertyName] = value;
-      },
-    });
-  };
-}
+  // Define setter method to the target class prototype,
+  // that set a given value to their own property instance
+  Object.defineProperty(target, methodName, {
+    value: function (value: unknown) {
+      this[propertyName] = value;
+    },
+  });
+};
