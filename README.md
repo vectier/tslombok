@@ -64,5 +64,4 @@ There are many ways in which you can participate in this project, for example:
 - Fixing issues and contributing directly to the code base by [submitting pull requests](https://github.com/vectier/tslombok/pulls).
 
 ## License
-Copyright (c) Vectier. All rights reserved.  
 Licensed under the [MIT](https://github.com/vectier/tslombok/blob/main/LICENSE) license.
